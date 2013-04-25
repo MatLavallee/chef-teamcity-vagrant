@@ -73,6 +73,6 @@ Vagrant.configure("2") do |config|
     #
     #}
 
-    chef.add_recipe 'chef-teamcity-vagrant::upgrade'
+    chef.add_recipe 'chef-teamcity-vagrant::teamcity'
   end
 end
