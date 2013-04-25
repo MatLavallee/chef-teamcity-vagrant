@@ -74,6 +74,7 @@ Vagrant.configure("2") do |config|
     #}
 
     %w(
+      chef-teamcity-vagrant::vcs
       chef-teamcity-vagrant::vagrant
     ).each do |r|
       chef.add_recipe r
