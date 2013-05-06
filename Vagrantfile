@@ -67,17 +67,17 @@ Vagrant.configure("2") do |config|
   # to skip installing and copying to Vagrant's shelf.
   # config.berkshelf.except = []
 
-  #config.vm.provision :chef_solo do |chef|
-  #  chef.cookbooks_path = %w(./vendor/cookbooks)
-  #  #chef.json = {
-  #  #
-  #  #}
-  #
-  #  %w[
-  #    chef-teamcity-vagrant::virtualbox
-  #  ].each do |r|
-  #    chef.add_recipe r
-  #  end
-  #
-  #end
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = %w(./vendor/cookbooks)
+    chef.json = {
+
+    }
+
+    %w[
+      chef-teamcity-vagrant
+    ].each do |r|
+      chef.add_recipe r
+    end
+
+  end
 end
