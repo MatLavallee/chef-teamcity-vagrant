@@ -70,7 +70,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = %w(./vendor/cookbooks)
     chef.json = {
-
+      java: {
+        oracle: {
+          accept_oracle_download_terms: true
+        }
+      }
     }
 
     %w[
