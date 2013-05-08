@@ -1,4 +1,4 @@
 default['teamcity']['version'] = '7.1.4'
-default['teamcity']['install_dir'] = '/opt/'
-default['teamcity']['data_path'] = '/var/TeamCity/.BuildServer'
-default['teamcity']['user']['password'] = '1234'
+default['teamcity']['install_dir'] = '/home/teamcity/'
+default['teamcity']['data_path'] = '/home/teamcity/TeamCityData'
+default['teamcity']['user']['name'] = 'teamcity'

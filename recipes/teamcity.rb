@@ -57,5 +57,6 @@ end
 
 # Start service
 service 'teamcity' do
+  supports :status => true
   action [:enable, :start]
 end
