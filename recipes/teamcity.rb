@@ -12,10 +12,8 @@ version = node['teamcity']['version']
 install_dir = node['teamcity']['install_dir']
 install_path = File.join install_dir, 'TeamCity'
 data_path = node['teamcity']['data_path']
-java_home = node['teamcity']['java_home']
 
 # Install Java
-node['java']['java_home'] = java_home
 include_recipe 'java::oracle'
 
 # Create user
