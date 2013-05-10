@@ -10,3 +10,5 @@ end
 dpkg_package deb_path do
   action :install
 end
+
+execute 'vagrant plugin install vagrant-aws'
