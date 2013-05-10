@@ -14,6 +14,7 @@ install_path = File.join install_dir, 'TeamCity'
 data_path = node['teamcity']['data_path']
 
 # Install Java
+node.default['java']['oracle']['accept_oracle_download_terms'] = true
 include_recipe 'java::oracle'
 
 # Create user
