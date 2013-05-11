@@ -55,6 +55,17 @@ Vagrant.configure("2") do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
 
+  # Digital Ocean Provider
+  config.ssh.private_key_path = '~/.ssh/id_rsa'
+  config.vm.box = 'digital_ocean'
+  config.vm.provider :digital_ocean do |provider|
+    provider.client_id = ENV['DO_CLIENT_ID']
+    provider.api_key = ENV['DO_API_KEY']
+    provider.image = 'Ubuntu 12.10 x64 Server'
+    provider.region = 'New York 1'
+    provider.size = '512MB'
+  end
+
   config.ssh.max_tries = 40
   config.ssh.timeout   = 120
 
