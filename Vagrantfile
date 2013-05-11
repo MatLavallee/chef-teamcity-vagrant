@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  config.berkshelf.enabled = true
+
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
@@ -9,11 +11,11 @@ Vagrant.configure("2") do |config|
   config.vm.hostname = "chef-teamcity-vagrant"
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise32"
+  config.vm.box = "precise64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
@@ -68,14 +70,7 @@ Vagrant.configure("2") do |config|
   # config.berkshelf.except = []
 
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = %w(./vendor/cookbooks)
-    chef.json = {
-      java: {
-        oracle: {
-          accept_oracle_download_terms: true
-        }
-      }
-    }
+    #chef.cookbooks_path = %w(./vendor/cookbooks)
 
     %w[
       chef-teamcity-vagrant
