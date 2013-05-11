@@ -63,7 +63,7 @@ Vagrant.configure("2") do |config|
     provider.api_key = ENV['DO_API_KEY']
     provider.image = 'Ubuntu 12.10 x64 Server'
     provider.region = 'New York 1'
-    provider.size = '512MB'
+    provider.size = '1GB'
   end
 
   config.ssh.max_tries = 40
@@ -84,7 +84,8 @@ Vagrant.configure("2") do |config|
     #chef.cookbooks_path = %w(./vendor/cookbooks)
 
     %w[
-      chef-teamcity-vagrant
+      chef-teamcity-vagrant::teamcity
+      chef-teamcity-vagrant::vagrant-digital-ocean
     ].each do |r|
       chef.add_recipe r
     end
