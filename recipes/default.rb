@@ -9,9 +9,7 @@
 
 %w[
   chef-teamcity-vagrant::vcs
-  chef-teamcity-vagrant::mercurial-git
   chef-teamcity-vagrant::teamcity
-  chef-teamcity-vagrant::vagrant
 ].each do |r|
   include_recipe r
 end
