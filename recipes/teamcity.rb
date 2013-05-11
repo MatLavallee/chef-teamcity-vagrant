@@ -22,7 +22,7 @@ user teamcity_user do
   comment 'User running TeamCity'
   shell '/bin/bash'
   home "/home/#{teamcity_user}"
-  supports({ manage_home: true })
+  supports :manage_home => true
 end
 
 # Download Teamcity
