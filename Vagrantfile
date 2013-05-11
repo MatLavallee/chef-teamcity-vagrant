@@ -85,6 +85,7 @@ Vagrant.configure("2") do |config|
 
     %w[
       chef-teamcity-vagrant::teamcity
+      chef-teamcity-vagrant::ssh
       chef-teamcity-vagrant::vagrant-aws
       chef-teamcity-vagrant::vagrant-digital-ocean
     ].each do |r|
